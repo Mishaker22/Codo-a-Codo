@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package metodos.pkg2;
+
+/**
+ *
+ * @author alumno
+ */
+public class superficies {
+    
+    public static int cuadrado (int lado){
+        return lado*lado;
+        
+        //metodo que calcula la superficie de un cuadrado:
+        
+     
+        
+        
+    }
+    public static int rectangulo (int base, int altura){
+    
+           // metodo que calcula la superficie de un rectangulo
+    return base*altura;
+}
+    public static double triangulo (int base, int altura){
+        
+           // metodo que calcula la superficie de un triangulo:
+        
+        
+        return (double) base*altura/2;
+    }
+    public static double circulo (double radio){
+        
+        //metodo que calcula la superficie de un circulo:
+        return Math.PI*Math.pow(radio, radio);
+    }
+    
+}
+

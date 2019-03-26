@@ -1,0 +1,26 @@
+public class Metodos2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       
+        System.out.println("Numero pi: "+Math.PI);
+        
+        
+        System.out.println("La superficie del cuadrado es: ");
+        System.out.println(superficies.cuadrado (10));
+        
+        System.out.println("La superficie del rectangulo es: ");
+        System.out.println(superficies.rectangulo (10,5));
+        
+        System.out.println("La superficie del triangulo es: ");
+        System.out.println(superficies.triangulo (4,9));
+        
+        System.out.println("La superficie del circulo es: ");
+        System.out.println(superficies.circulo (7));
+        // TODO code application logic here
+    }
+    
+}
