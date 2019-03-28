@@ -1,0 +1,38 @@
+public class Persona {
+    
+    //NO ES BUENA PRACTICA DECLARAR DE ESTA MANERA
+    
+    String nombre;
+    String apellido;
+    int dni;
+    
+    
+    //constructor pot defecto o vacio:
+    
+    public Persona(){
+     
+        
+    } public Persona(String nombre){
+        this.nombre=nombre;
+    }
+    public Persona(String nombre, String apellido){
+        this.apellido=apellido;
+        this.nombre=nombre;
+    } //constructor completo
+    public Persona(String nombre, String apellido, int dni){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.dni=dni;
+    } 
+    public void cantar(){
+        System.out.println("La laralalaaaa La laralala Laaaa");
+    }
+    public void cantar (int cantidad){
+        
+        for (int i = 0; i < cantidad; i++) {
+            
+            System.out.println("La laralalaaaa La laralala Laaaa");
+            
+        }
+    }
+}

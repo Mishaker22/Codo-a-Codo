@@ -1,0 +1,88 @@
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        // crear un objeto de la clase persona
+        
+        Persona unaPersona= new Persona();
+        
+        imprimirUnaPersona(unaPersona);
+        // mostrando los contenidos de mi objeto persona
+       /* System.out.println(unaPersona.apellido);
+        System.out.println(unaPersona.nombre);
+        System.out.println(unaPersona.dni);
+        // TODO code application logic here*/
+        
+        unaPersona.nombre="Ricardo";
+        unaPersona.apellido="Herran";
+        unaPersona.dni=95825136;
+        
+        /*System.out.println("El nombre es: "+unaPersona.nombre);
+        System.out.println("El apellido es: "+unaPersona.apellido);
+        System.out.println("El dni es: "+unaPersona.dni);*/
+        
+        Persona otraPersona=new Persona();
+        otraPersona=unaPersona;
+        
+        
+        
+        otraPersona.nombre="Oscar";
+        
+        imprimirUnaPersona(otraPersona);
+        
+       /* System.out.println("El nombre es: "+unaPersona.nombre);
+        System.out.println("El apellido es: "+unaPersona.apellido);
+        System.out.println("El dni es: "+unaPersona.dni);
+ 
+        System.out.println("El nombre es: "+unaPersona.nombre);
+        System.out.println("El apellido es: "+unaPersona.apellido);
+        System.out.println("El dni es: "+unaPersona.dni);*/
+        
+        //un ejemplo para mostrar que sirve hacer una clase dentro del clase main. pero es poco recomendable
+        Perro summer=new Perro();
+        summer.apodo="Summer";
+        summer.raza="Labrador";
+        
+        System.out.println("Mi perro se llama: "+summer.apodo);
+        System.out.println("Su raza es de: "+summer.raza);
+        
+        imprimirUnaPersona(unaPersona);
+        
+        Persona pers2= new Persona("Michell");
+        imprimirUnaPersona(pers2);
+        
+        String nombre="Fernando";
+        Persona pers3= new Persona (nombre);
+        imprimirUnaPersona(pers3);
+        
+        Persona pers4= new Persona ("Daniel", "Ladino",52119123);
+        imprimirUnaPersona (pers4);
+        
+        pers4.cantar();
+        pers4.cantar(8);
+        
+    } 
+    
+    public static class Perro{
+        
+        String apodo;
+        String raza;
+        
+        public Perro(){
+            
+        } 
+    }    
+        public static void imprimirUnaPersona(Persona persona){
+            
+            System.out.println("El nombre es: "+persona.nombre);
+        System.out.println("El apellido es: "+persona.apellido);
+        System.out.println("El dni es: "+persona.dni);
+            
+            
+        }
+    } 
+
+
