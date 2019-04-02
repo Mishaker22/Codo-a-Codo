@@ -1,0 +1,80 @@
+crear la clase alumno con su nombre y tres notas. luego programar un metodo para cacular  obtner el promedio de alumno
+
+Agregar un metodo que devuelva la condicion del alumno (Aprobado, reprobado, o aplazado)
+
+@author alumno
+ */
+public class Vehiculo {
+    private String marca;
+    private String color;
+    private int cantPasajeros;
+    
+   public Vehiculo (String marca, String color, int cantPasajeros){
+       this.marca= marca;
+       this.color= color;
+       this.cantPasajeros= cantPasajeros;
+       
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejercicio1;
+
+/**
+ *
+ * @author alumno
+ */
+public class Alumno {
+    //Atributos de mi clase Alumno. 
+    //No es buen apratica declarar asi los atributos.
+    String nombre;
+    int nota1;
+    int nota2;
+    int nota3;
+    
+    int [] notas= new int [3];
+    
+    
+    //Constructor por defecto. siempre va.
+    public Alumno(){
+        
+    }
+    //constructor sobre cargado
+    public Alumno(String nombre, int nota1, int nota2, int nota3){
+   
+        this.nombre=nombre;
+   
+        this.nota1=nota1;
+  
+        this.nota2=nota2;
+   
+        this.nota3=nota3;
+}
+    public double obtenerPromedio(){
+        return (double)(nota1+ nota2 +nota3)/3;
+        
+    }
+    public String obtenerCondicion(){
+      
+        double promedio= obtenerPromedio();
+        String condicion="";
+        
+        if (promedio>=0 && promedio<4){
+            condicion= "Aplazado";
+        } else if (promedio>=4 && promedio<7){
+            condicion= "Reprobado";
+        } else if (promedio>=7 && promedio<10){
+            condicion= "Aprobado";
+        }else{
+            condicion="Error. nota fuera de rango";
+        }
+        
+   
+        
+        
+        return condicion;
+    }
+    
+    
+}
