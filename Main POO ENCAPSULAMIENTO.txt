@@ -1,0 +1,52 @@
+ public static void main(String[] args) {
+        
+        Persona pers1= new Persona ();
+        //Esta es la manera como ahora debemos llamar el metodo
+        pers1.setNombre("Daniel");
+        
+        pers1.setApellido("Quintero");
+        
+        pers1.setCalle("Mosconi");
+        
+        pers1.setAltura(2060);
+        
+        pers1.setDni(95825136);
+        
+        Persona pers2=new Persona ();
+        
+        Scanner teclado= new Scanner (System.in);
+        
+        System.out.println("Ingrese su nombre");
+        pers2.setNombre(teclado.nextLine());
+        System.out.println("Ingrese su apellido");
+        pers2.setApellido(teclado.nextLine());
+        System.out.println("Ingrese su Dni");
+        pers2.setDni(teclado.nextInt());
+        
+        String nombre="Matha";
+        String apellido="franco";
+        int dni= 52119123;
+        String calle="Arboleda";
+        int altura= 22;
+        
+        Persona pers3= new Persona (nombre, apellido, calle, altura, dni);
+        
+        System.out.println("Nombre: "+pers3.getNombre());
+        System.out.println("Apellido: "+pers3.getApellido());
+        System.out.println("Dni: "+pers3.getDni());
+        System.out.println("Calle: "+pers3.getCalle());
+        System.out.println("Altura: "+pers3.getAltura());
+        
+        System.out.println(nombre);
+        
+        pers1.toString();
+        
+        //Esto no se puede hacer por que no da bien.
+        System.out.println(pers3);
+        System.out.println(pers1);
+        System.out.println(pers2);
+        
+        
+    }
+    
+}

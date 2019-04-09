@@ -1,0 +1,76 @@
+public class Persona {
+    
+    private String nombre;
+    private String apellido;
+    private String calle;
+    private int altura;
+    private int dni;
+    // constructor por defecto
+    //si no se lo usa.  n lo programo
+    public Persona()
+    {
+        
+    }
+    
+    // constructores:
+    public Persona (String nombre, String apellido, String calle, int dni, int altura)
+    {
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.dni=dni;
+        this.calle=calle;
+        this.altura=altura;
+    }
+    //Setters:
+    public void setNombre(String nombre)
+    {
+        this.nombre=nombre;
+    }
+    public void setApellido(String apellido)
+    {
+        this.apellido=apellido;
+    }
+    public void setCalle (String calle)
+    {
+        this.calle=calle;
+    }
+    public void setAltura (int altura)
+    {
+        this.altura=altura;
+    }
+    public void setDni (int dni)
+    {
+        this.dni=dni;
+        
+    }
+    
+    //Getters:
+    public String getNombre ()
+    {
+        return this.nombre;
+    }
+    public String getApellido ()
+    {
+        return this.apellido;
+    }
+    public String getCalle ()
+    {
+        return this.calle;
+    }
+    public int getAltura ()
+    {
+        return this.altura;
+    }
+    public int getDni ()
+    {
+        return this.dni;
+    }
+    
+    //SOBREESCRITURA DEL METODO toString()
+    @Override
+    public String toString()
+    {
+        return this.nombre+"--"+this.apellido +"( Es una persona)";
+    }
+    
+}
