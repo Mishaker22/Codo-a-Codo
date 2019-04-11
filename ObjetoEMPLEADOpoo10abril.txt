@@ -1,0 +1,93 @@
+public class Empleado {
+    
+    private String nombre;
+    private String sexo;
+    private double sueldoBruto;
+    private double sueldoNeto;
+    private int horasTrabajadas=0;
+    
+    //constructor por defecto:
+    public Empleado()
+    {
+        
+    }
+    // constructor sobre cargado:
+    public Empleado (String nombre, String sexo, double sueldoBruto)
+    {
+        this.nombre=nombre;
+        this.sexo=sexo;
+        this.sueldoBruto=sueldoBruto;
+        this.horasTrabajadas=0;
+        this.sueldoNeto= calcularNeto();
+                
+        
+    }
+    
+    //Setters:
+    
+    public void setNombre (String nombre)
+    {
+        this.nombre=nombre;
+
+    }
+    public void setSexo (String sexo)
+    {
+        this.sexo=sexo;
+    }
+    public void setHorasTrabajadas (int horasTrabajadas)
+    {
+        this.horasTrabajadas=horasTrabajadas;
+    }
+    public void setSueldoBruto (double sueldoBruto)
+    {
+      
+        this.sueldoBruto=sueldoBruto;
+        this.sueldoBruto=calcularNeto();
+        
+    }
+    
+    
+    //Getters:
+    public String getNombre()
+    {
+        return this.nombre;
+    }
+    public String getSexo()
+    {
+        return this.sexo;
+    }
+    public int getHorasTrabajadas ()
+    {
+        return this.horasTrabajadas;
+        
+    }
+    public double getSueldoBruto()
+    {
+        return this.sueldoBruto;
+    }
+    public double getSueldoNeto()
+    {
+        return this.sueldoNeto;
+    }
+    
+    public double calcularNeto()
+    {
+        return this.sueldoBruto*0.85;
+    }
+    public void aTrabajar (int cantHoras)
+    {
+        boolean pudoTrabajar =false;
+        if (this.horasTrabajadas + cantHoras<=8)
+        {
+            this.horasTrabajadas=this.horasTrabajadas+ cantHoras;
+            pudoTrabajar=true;
+        }
+        
+    }
+    @Override
+    public String toString()
+    {
+        return this.nombre+" empleado de sexo "+this.sexo +", sueldo NETO "
+                +this.sueldoNeto+" lleva trabajando "+this.horasTrabajadas+" horas";
+    }
+}

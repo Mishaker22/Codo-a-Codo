@@ -1,0 +1,28 @@
+public class main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       
+        Empleado emple1= new Empleado();
+        
+        emple1.setNombre("Michell");
+        emple1.setSexo("Femenino");
+        emple1.setHorasTrabajadas(4);
+        emple1.setSueldoBruto(20000);
+        
+        int cantidad =3;
+        //if (emple1.aTrabajar(cantidad)){
+            
+        //}
+ 
+        emple1.calcularNeto();
+        emple1.toString();
+        
+        System.out.println(emple1);
+        // TODO code application logic here
+    }
+    
+}
