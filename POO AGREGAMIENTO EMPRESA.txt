@@ -1,0 +1,40 @@
+public class Empresa {
+    
+   //De momento utilzaremos un vector para guardar s los empleados. ,as adelante lo reemplazaremos por otra estructura
+   // y ya n necesitaremos tener la variable que hace referencia a un indice
+    private String razonSocial;
+    private Empleado[] empleados;
+    private int indiceEmpleado=0;
+    
+    public Empresa (String razonSocial, int cantEmpleados)
+    {
+        this.razonSocial=razonSocial;
+        this.empleados= new Empleado[cantEmpleados];
+    }
+    //Agregar Empleados
+    public boolean agregarUnEmpleado(Empleado empleado)
+    {
+        boolean fueAgregado= false;
+        if (this.indiceEmpleado<this.empleados.length)
+        {
+            empleados[indiceEmpleado]=empleado;
+            indiceEmpleado++;
+            fueAgregado= true;
+        }
+        return fueAgregado;
+    }
+    public void mostrarEmpleados ()
+    {
+        System.out.println("\n Lista de empleados: \n");
+        if(this.indiceEmpleado==0)
+        {
+            System.out.println("Sin empleados");
+        }else{
+        for (int i = 0; i < this.indiceEmpleado ; i++) {
+            System.out.println(this.empleados[i]);
+        }
+    }
+    
+    }
+}
+

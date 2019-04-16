@@ -1,0 +1,48 @@
+public class main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Empleado emp1= new Empleado (1, "Lucas","Perez", 98665123);
+        //Nombre de empresa y cantidas de emepleados:
+        
+        Empresa panaderia=new Empresa ("Mishaker", 3);
+        
+        //Agrego un empleado a la empresa:
+        if (panaderia.agregarUnEmpleado(emp1))
+                {
+                    System.out.println("Empleado Agregado");
+                }else{
+            System.out.println("No hay puestos dispinibles!");
+        }
+        Empleado emp2=new Empleado (200,"Maria","Gomez",122580605);
+        Empresa pizzeria=new Empresa ("Jenozz Pizza", 2343245);
+        
+        contratar (emp2, pizzeria);
+        contratar(emp2, panaderia);
+        
+        
+        Empleado emp3=new Empleado (32, "Oscar", "muñoz",4535653);
+        contratar (emp3,panaderia);
+       
+        
+        contratar(emp1,panaderia);
+         panaderia.mostrarEmpleados();
+        
+        
+    }
+    public static void contratar (Empleado unEmpleado, Empresa unaEmpresa)
+    {
+        if (unaEmpresa.agregarUnEmpleado(unEmpleado))
+                {
+                    System.out.println("Empleado Agregado!!!");
+                }else{
+            System.out.println("No hay lugar!!");
+        }
+       
+        
+    }
+    
+}
