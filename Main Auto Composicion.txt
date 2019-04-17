@@ -1,0 +1,24 @@
+public class main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        Auto spider498 =new Auto ("Ferrari" , 6 , 4500, Combustible.GNC);
+         
+         System.out.println(spider498);
+         spider498.setTipoCombustible(Combustible.NAFTA);
+         spider498.setCantCilindros(900);
+         spider498.setMarca("Renault");
+         System.out.println(spider498);
+    }
+    
+   
+    
+    
+    
+    
+}

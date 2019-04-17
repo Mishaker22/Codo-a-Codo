@@ -1,0 +1,53 @@
+public class Motor {
+    
+    private int cantCilidro;
+    private int cilindrada;
+    private Combustible tipoCombustible;
+    
+    
+    //Constructor sobrecargado
+    public Motor (int cantCilindros, int cilindrada, Combustible tipoCombustible)
+    {
+        this.cantCilidro=cantCilindros;
+        this.cilindrada=cilindrada;
+        this.tipoCombustible=tipoCombustible;
+        
+        
+    }
+    //Setters:
+    public void setCantCilindros (int cantCilindros)
+    {
+        this.cantCilidro=cantCilindros;
+    }
+    public void setCilindrada (int cilindrada)
+    {
+        this.cilindrada=cilindrada;
+    }
+    public void setTipoComustible (Combustible tipoCombustible)
+    {
+        this.tipoCombustible=tipoCombustible;
+    }
+    
+    //Getters:
+    
+    public int getCantCilindros()
+    {
+        return this.cantCilidro;
+    }
+    public int getCilindrada ()
+    {
+        return this.cilindrada;
+    }
+    public Combustible getTipoCombustible ()
+    {
+        return this.tipoCombustible;
+    }
+    @Override
+    
+    public String toString ()
+    {
+        return "Cilindrada: "+ this.cilindrada+", tipo de combustible: "+ 
+                this.tipoCombustible;
+    }
+    
+}
