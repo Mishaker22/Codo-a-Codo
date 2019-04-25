@@ -1,0 +1,17 @@
+public class Rectangulo extends Figuras{
+
+    public Rectangulo (int lado1, int lado2)
+    {
+        super ("Rectangulo", lado1);
+    }
+    @Override
+    public int obtenerPerimetro() {
+        return this.getLado1()*4;
+    }
+
+    @Override
+    public double obtenerArea() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}

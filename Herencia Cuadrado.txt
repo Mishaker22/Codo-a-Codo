@@ -1,0 +1,20 @@
+public class Cuadrado extends Figuras{
+    
+    public Cuadrado (int lado)
+    {
+        super ("Cuadrado", lado);
+    }
+    
+    @Override
+    public int obtenerPerimetro()
+    {
+        return this.getLado1()*4;
+    }
+    
+    @Override
+    public double obtenerArea()
+    {
+        return Math.pow(this.getLado1(), 2);
+    }
+    
+}

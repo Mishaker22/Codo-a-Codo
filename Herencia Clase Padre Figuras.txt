@@ -1,0 +1,39 @@
+public abstract class Figuras {
+    
+    private String nombre;
+    private int lado1;
+
+  public Figuras (String nombre, int lado)
+{
+this.nombre=nombre;
+this.lado1=lado;
+    
+}
+public String getNombre ()
+{
+    return this.nombre;
+}
+public int getLado1 ()
+{
+    return this.lado1;
+}
+  //Setters:
+public void setNombre (String nombre)
+{
+this.nombre= nombre;
+}
+public void setLado (int ladoUno)
+{
+    this.lado1= ladoUno;
+}
+public abstract int obtenerPerimetro ();
+public abstract double obtenerArea ();
+
+
+
+ @Override
+    public String toString(){
+        return "Esta es una figura";
+    }
+}
+

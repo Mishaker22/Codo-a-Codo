@@ -1,0 +1,29 @@
+  public static void main(String[] args) {
+        
+        
+        Triangulo tri=new Triangulo(10,10,10);
+        Cuadrado cuad1=new Cuadrado(8);
+        Cuadrado cuad2=new Cuadrado (15);
+        
+        System.out.println(tri.obtenerArea());
+        System.out.println(cuad1.obtenerArea());
+        System.out.println(cuad2.obtenerArea());
+        
+        Figuras[] figuras={tri, cuad1, cuad2};
+        for (int i = 0; i < figuras.length; i++) {
+            
+            System.out.println(figuras[i].obtenerArea());
+            
+        }
+        System.out.println("el perimetro es: "+ tri.obtenerPerimetro());
+        System.out.println("El area es: "+tri.obtenerArea());
+        System.out.println(tri.getNombre());
+        
+        System.out.println("El perimetro es: "+cuad1.obtenerPerimetro());
+        System.out.println("El area es: "+cuad1.obtenerArea());
+        System.out.println(cuad1.getNombre());
+        
+        
+    }
+    
+}
