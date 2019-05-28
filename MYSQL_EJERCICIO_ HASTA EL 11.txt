@@ -1,0 +1,45 @@
+SELECT * FROM world.countrylanguage;
+
+SELECT DISTINCT countrylanguage.Language
+FROM world.countrylanguage;
+
+SELECT city.Name AS Nombre, city.Population AS Poblacion
+FROM world.city;
+
+SELECT country.name , country.gnp AS 'Producto Bruto Nacional',
+country.gnpold AS 'producto bruto nacional anterior', (country.gnp - country.gnpold) AS 'DIFERENCIA'
+FROM world.country;
+
+SELECT country.name, country.gnp AS 'Producto Bruto Nacional', country.gnpold AS 'Producto Bruto Nacional Anterior',
+(ifnull(country.gnp-country.gnpold, country.gnp)) AS 'DIFERENCIA' 
+FROM world.country;
+
+SELECT country.name, country.Population, country.SurfaceArea,
+(country.Population / country.SurfaceArea) AS 'DENSIDAD'
+FROM world.country;
+
+SELECT *
+FROM world.country
+ORDER BY country.Population ASC;
+
+SELECT countrylanguage.Language 
+FROM world.countrylanguage
+order by countrylanguage.Language asc;
+
+SELECT city.name, city.Population
+FROM world.city
+order by city.Population ASC
+limit 20;
+
+SELECT country.Code, country.Name , country.IndepYear
+FROM world.country
+order by country.IndepYear DESC;
+
+SELECT country.name , country.continent, country.lifeexpectancy,
+country.surfacearea
+FROM world.country
+ORDER BY country.lifeexpectancy DESC, country.surfacearea ASC
+LIMIT 100;
+
+SELECT * 
+FROM world.country
