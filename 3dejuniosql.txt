@@ -1,0 +1,109 @@
+-- 10 --
+select country.name, country.Continent, country.LifeExpectancy, country.SurfaceArea
+from world.country
+order by country.LifeExpectancy DESC, country.surfaceArea ASC
+limit 100;
+
+SELECT * from world.country
+where country.population =0;
+
+
+-- 12 listar todos los datos d los paises cuya expectativas de vida supere los sesenta y cinco años, ordenados bajo este concepto dee forma ascendente(se espera 15 columnas y 62 registro--
+
+
+select * from world.country
+where country.lifeExpectancy > 75
+order by country.lifeExpectancy ASC;
+
+
+-- 13 listar todos los datos de los paises cuya independencia haya ocurrido a parartir de la segunda mitad del siglo xix 1850 y su forma de gobierno sea una monarquia constitucional(se esperan 15 columnas, y 20 registros)--
+
+select * from world.country
+where country.indepyear > 1850 and country.governmentForm = 'constitutional Monarchy';
+
+
+-- 14 listar todos los datos de los diez paises europeos de mayor pbn (se esperan 15 columnas, 10 registros)--
+
+select * from world.country
+where country.continent = 'Europe' 
+order by country.gnp desc
+limit 10;
+
+
+-- 15 listar todos los datos de los paises cuyo nombre registrado coincida con su nombre local. (se esperan 15 columnas y 104 registro) --
+select * from world.country
+where country.name = country.localName;
+
+
+-- 16 listar todos los datos de los paises cuya independencia se haya dado a partir de la 2da mitad de siglo xx (1950) hasta el año 1999 (se esperan 15 columnas y 110 registros) --
+select * from world.country
+where country.IndepYear >= 1950 and country.IndepYear <= 1999;
+-- manera de hacerlo mas profesional
+select * from world.country
+where country.indepYear between 1950 and 1999;
+
+
+-- 17 listar todos los datos de los paises situados en europa, asia o sudamerica --se esperan 15 columnas y 111)--
+select * from world.country
+where (country.continent = 'Europe') or (country.continent ='Asia') or (country.continent= 'South America');
+
+-- 2da manera de hacerlo--
+
+select * from world.country
+where country.continent in ('Europe' , 'Asia', 'South America');
+
+-
+- 18 Listar todos los datos de los paises, excepto los africanos (se esperan 15 columnas y 181 registros.) --
+select * from world.country
+where country.continent != ('Africa');
+
+-- 2da forma de hacerlo 
+
+select * from world.country
+where country.continent <> ('Africa');
+
+-- 3ra forma de hacerlo
+
+select * from world.country
+where  NOT country.continent = ('Africa');
+
+-
+- 19 LISTAR TODOS LOS DATOS DE LA CIUDADES ARGENTINAS FUERA DE LA PROVINCIA DE BUENOS AIRES. (SE ESPERAN 5 COLUMNAS Y 26 REGISTROS)
+
+SELECT * FROM world.city
+where (city.countrycode = 'ARG' and not city.district = 'Buenos Aires');
+
+-
+- 20 listar todos los datos de las ciudades entre 125 mil y 130 mil habitantes( se esperan 5 columnas y 138 registros)
+select * from world.city
+where (city.population between 125000 and 130000);
+
+-
+- 21 listar todos los datos de los paises donde no se cuente con datos acerca de su independencia (se esperan 15 columnas y 47 registros) --
+select * from world.country
+where country.indepYear is null;
+
+-
+- 22 listar todos los datos de los paises donde no se tengan datos cerca dek pbn anterior ni de la expectatica de vida ( se esperan 15 columnas y 17 registros)
+
+select * from world.country
+where country.gnpold is null and country.lifeExpectancy is null;
+
+-
+- 23 listar todos los datos de los paises cuyo nombre comience con A. (se esperan 15 columnas y 15 registros)
+
+select * from world.country
+where country.name like 'A%';
+
+-- para que empiece por una letra 'a%b' y termine en b--
+
+-- 24 listar todos los datos de los paises cuyo nombre sea compuesto (mas de una palabra). (se esperan 15 columnas y 66 registros)--
+
+select * from world.country
+where country.name like '% %';
+
+-
+-- 25 listar todos los datos de la ciudades cuyo nombre o distrito contengan un '-' ( se esperan 5 columnas y 372 registros)
+
+select * from world.city
+where city.name like '%-%'  or city.district like '%-%';
