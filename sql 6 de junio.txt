@@ -1,0 +1,57 @@
+-- 25 listar todos los datos de la ciudades cuyo nombre o distrito contengan un '-' ( se esperan 5 columnas y 372 registros)
+
+select * from world.city
+where city.name like '%-%'  or city.district like '%-%';
+
+
+
+-- 26 listar los nombres de los paises (alias 'pais') juanto a los nombres de sus capitales alias ('capital'). se esperan dos columnas y 232 registros.alter
+
+select country.name as 'Pais' , city.name as 'Capital'
+from world.country, world.city
+where country.capital = city.id;
+
+select country.name as 'Pais' , city.name as 'Capital'
+FROM world.country INNER JOIN world.city
+ON country.capital = city.id;
+
+-- 26.2 listar los nombres de los paises sudamericanos (alias pais) junto a los nombrbes de sus capitales (alias capital. se esperan dos columnas y 14 registros
+select country.name as 'PAIS' , city.name as 'CAPITAL'
+FROM world.country inner join world.city
+on country.capital = city.id and country.continent ='South America';
+
+
+
+-- 27 listar el codigo del pais, junto a los nombres de las ciudades y su cantidad de habitantes, de aquellos cuya expectativa de vida sea mayor a 80. se esperan 3 columnas y 253 registros
+
+select country.code , city.name, city.population
+from world.country inner join world.city
+on country.code = city.countrycode 
+where country.lifeExpectancy > 80;
+
+
+
+-- 28 listar las capitales de los paises cuya forma de gobierno sea una republica federal ( se esperan dos columnas y 15 regitros)
+
+select country.name, city.name as 'CAPITAL'
+from world.country inner join world.city
+on country.capital = city.id
+where country.governmentForm = 'Federal Republic';
+
+
+
+-- 29 listar los lenguajes oficiales, junto al nombre de sus respectivos paises, donde la cantidad de habitantes de dicho pais este entre uno y tres millones, (se esperan 2 columnas y 14 registros).alter
+
+
+Select countrylanguage.language , country.name
+from world.countrylanguage inner join world.country
+on country.code= countrylanguage.countrycode
+where (country.population between 1000000 and 5000000) and (countrylanguage.IsOfficial = 't');
+
+
+
+-- 30 listar los codigos, los nombres locales y la region ala que pertenencen aquellos paises donde se hable espñol ( se esperan 3 columnas y 28 registros)
+select country.name, country.localName, country.region
+from world.country inner join world.countrylanguage
+on country.code = countrylanguage.countrycode
+where countrylanguage.language = 'Spanish';
