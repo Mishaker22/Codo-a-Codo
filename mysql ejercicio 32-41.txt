@@ -1,0 +1,55 @@
+-- 36 mostrar segun la tabla los paises la cantida total de poblacion, la poblacion maima, la poblacion minima el promedio de poblacion y con cuantos registro sde poblacion se cuenta
+-- se esperan 5 columnas y 1 registro.alter
+
+Select SUM(country.population) AS 'Poblacion total',
+MAX(country.population) AS 'Poblacion Maxima',
+MIN(Country.population) AS 'Poblacion Minima',
+AVG(Country.population) AS 'Promedio',
+count(country.population) AS 'registro'
+from world.country;
+
+-- 37 Mstrar segun la tabla de paise, la cantidad total de poblacion, la poblacion maxima, la poblacion minima,y el promedio de poblacion, por cada continente
+-- (se esperan 5 columnas y 7 registros)
+
+SELECT country.continent,
+SUM(country.population) AS 'Poblacion Total',
+MAX(country.population) AS 'Poblacion Maxima',
+MIN(country.population) AS 'Poblacion Minima',
+AVG(country.population) AS 'Promedio Poblacion' 
+from world.country
+group by country.Continent;
+
+-- 38 Agrupar a todos los paises segun el continente al que pertenecen. Mostrar los continentes junto a la cantidad de naciones que perteneces a cada uno.
+-- (se esperan 2 columnas y 7 registros).
+
+select country.continent,
+count(*) AS 'cantidad de naciones'
+from world.country
+group by country.Continent;
+
+
+-- 39 Agrupar a todas las ciudades segun el pais al que pertenencen. Mostrar los codigos de paises junto a la sumatoria total de habitantes de
+-- cada uni. (se esperan 2 columnas y 232 registros)
+
+select city.CountryCode,
+SUM(city.Population) AS 'TOTAL DE HABITANTES' 
+from world.city
+group by city.CountryCode;
+
+-- 40 agrupar a todos los lenguajes segun su nombre. mostrar los nombres de los lenguajes junto al porcentaje de habla minimo registrado para cada uno
+-- se esperan 2 columnas y 457 registros.
+
+select countrylanguage.Language,
+MIN(countrylanguage.Percentage) AS 'LENGUAJE MENOS HABLADO'
+from world.countrylanguage
+group by countrylanguage.Language;
+
+-- 41 mostrar los dintintas formas de gobierno posibles de los paises europeos junto a su correspondiente promedio de poblacion
+-- que vive bajo estas circinstancias. se esperan dos columnas y 10 regis
+
+select country.GovernmentForm,
+AVG(country.population) AS 'PROMEDIO DE POBLACION' 
+FROM world.country
+WHERE country.continent = 'Europe'
+group by country.governmentform;
+
